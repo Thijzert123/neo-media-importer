@@ -1,5 +1,5 @@
 # DJI Neo Media Importer
-An easy-to-use media importer written in Python. It imports media from the sd-card inside of the DJI Neo. It might also work with other (DJI) drones, but only the DJI Neo has been tested.
+An easy-to-use media importer for DJI Neo written in Python. It may also work with other (DJI) drones, but only the DJI Neo has been tested.
 
 It works as follows:
  - You specify a source directory (the DJI sd-card inside of the drone) and a target directory (where the files will be copied to).

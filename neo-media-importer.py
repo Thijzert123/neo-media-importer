@@ -2,14 +2,14 @@
 import os, sys, datetime, subprocess, shutil
 
 if len(sys.argv) < 3:
-    print("Usage: python3 neo-media-importer.py <WORKING-DIRECTORY> <TARGET-DIRECTORY>")
+    print("Usage: python3 neo-media-importer.py <SOURCE-DIRECTORY> <TARGET-DIRECTORY>")
     print("If more arguments are passed, every video will be encoded to h264.")
     exit(1)
 
-working_directory = os.path.dirname(os.path.abspath(sys.argv[1]))
+source_directory = os.path.dirname(os.path.abspath(sys.argv[1]))
 target_directory = os.path.abspath(sys.argv[2])
 
-for path, dirs, files in os.walk(working_directory):
+for path, dirs, files in os.walk(source_directory):
     for file in files:
         if file.startswith("DJI_") and file.endswith(".MP4"):
             file_id = file.removesuffix(".MP4") # filename without .MP4 (such as DJI_20250101151617_0023_D)

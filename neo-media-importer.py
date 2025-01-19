@@ -23,6 +23,11 @@ for path, dirs, files in os.walk(source_directory):
             new_video_path = os.path.join(target_directory, date_str + ".mp4")
             new_flightdata_path = os.path.join(target_directory, date_str + ".srt")
 
+            if os.path.exists(new_video_path):
+                print("Skipping %s, %s exists" % (file_id, new_video_path))
+                print()
+                continue
+
             print("Processing %s" % (file_id))
             print()
 

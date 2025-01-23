@@ -10,6 +10,8 @@ It works as follows:
 
 ## Usage
 ```
-python3 neo-media-importer.py <SOURCE-DIRECTORY> <TARGET-DIRECTORY>
+Usage: python3 neo-media-importer.py <SOURCE-DIRECTORY> <TARGET-DIRECTORY> [OPTIONS ...]
+Options:
+  -to-h264      Encode videos to h264
+  -merge-audio  Merge audio and videos into one mp4 file
 ```
-If more (random) arguments are passed, every video will be encoded to h264.

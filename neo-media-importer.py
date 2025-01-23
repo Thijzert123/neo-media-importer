@@ -19,8 +19,8 @@ for path, dirs, files in os.walk(source_directory):
             full_flightdata_path = os.path.join(path, file_id + ".SRT")
             full_audio_path = os.path.join(path, file_id + ".m4a")
 
-            time = os.path.getmtime(full_video_path)
-            date_str = datetime.datetime.fromtimestamp(time).strftime("%Y-%m-%d-%H:%M:%S")
+            time = file_id.split("_")[1]
+            date_str = datetime.datetime.strptime(time, "%Y%m%d%H%M%S").strftime("%Y-%m-%d-%H:%M:%S")
 
             new_video_path = os.path.join(target_directory, date_str + ".mp4")
             new_flightdata_path = os.path.join(target_directory, date_str + ".srt")
@@ -48,8 +48,8 @@ for path, dirs, files in os.walk(source_directory):
             file_id = file.removesuffix(".JPG")
             full_photo_path = os.path.join(path, file)
 
-            time = os.path.getmtime(full_photo_path)
-            date_str = datetime.datetime.fromtimestamp(time).strftime("%Y-%m-%d-%H:%M:%S")
+            time = file_id.split("_")[1]
+            date_str = datetime.datetime.strptime(time, "%Y%m%d%H%M%S").strftime("%Y-%m-%d-%H:%M:%S")
 
             new_photo_path = os.path.join(target_directory, date_str + ".jpg")
 

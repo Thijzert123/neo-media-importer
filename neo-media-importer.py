@@ -30,7 +30,7 @@ for path, dirs, files in os.walk(source_directory):
                 print()
                 continue
 
-            print("Processing %s" % (file_id))
+            print("Processing %s (%s)" % (file_id, new_video_path))
             print()
 
             if "-merge-audio" in sys.argv and os.path.exists(full_audio_path):
@@ -53,6 +53,11 @@ for path, dirs, files in os.walk(source_directory):
 
             new_photo_path = os.path.join(target_directory, date_str + ".jpg")
 
-            print("Processing %s" % (file_id))
+            if os.path.exists(new_photo_path):
+                print("Skipping %s, %s exists" % (file_id, new_photo_path))
+                print()
+                continue
+
+            print("Processing %s (%s)" % (file_id, new_photo_path))
             print()
             shutil.copy2(full_photo_path, new_photo_path)
